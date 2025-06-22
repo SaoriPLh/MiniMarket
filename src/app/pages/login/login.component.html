@@ -1,28 +1,37 @@
-<div class="login-container">
-  <h2>¡Bienvenido!</h2>
-  <p class="subtitle">Inicia sesión para continuar</p>
+<div class="login-wrapper">
+  <div class="login-left">
+    <img src="assets/personalogin.jpg" alt="Imagen de fondo" />
+  </div>
 
-  <form [formGroup]="form" (ngSubmit)="login()">
-    <div class="input-group">
-      <i class="fas fa-user"></i>
-      <input id="nombre" formControlName="nombre" type="text" placeholder="Nombre de usuario" />
-    </div>
-    <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">
-      El nombre es obligatorio.
-    </div>
+  <div class="login-right">
+    <div class="login-container">
+      <h1 class="title">MiniMarket</h1>
+<h2 class="subtitle">Login</h2>
+<p>Ingresa a tu cuenta para continuar</p>
 
-    <div class="input-group">
-      <i class="fas fa-lock"></i>
-      <input id="password" formControlName="password" type="password" placeholder="Contraseña" />
-    </div>
-    <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="error">
-      La contraseña es obligatoria.
-    </div>
 
-    <button type="submit" [disabled]="form.invalid">Iniciar sesión</button>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Nombre de usuario" formControlName="nombre" />
+        </div>
+        <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">
+          El nombre es obligatorio.
+        </div>
 
-    <div *ngIf="response?.access_token" class="success">
-      ¡Login exitoso! Redirigiendo...
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Contraseña" formControlName="password" />
+        </div>
+        <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="error">
+          La contraseña es obligatoria.
+        </div>
+
+        <button type="submit" [disabled]="form.invalid">Ingresar</button>
+        <div *ngIf="response?.access_token" class="success">¡Login exitoso!</div>
+      </form>
+
+      <a class="link" href="#">¿Olvidaste tu contraseña?</a>
     </div>
-  </form>
+  </div>
 </div>
