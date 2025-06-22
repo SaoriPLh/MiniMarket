@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  background: linear-gradient(to right, #dee4ff, #e6f7ff);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.login-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 2.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  font-size: 2rem;
+  color: #3c3f58;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none; /* evita problemas al hacer clic */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-left: 2.5rem; /* <= AJUSTA este valor para que no se salga */
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  box-sizing: border-box; /* <= Asegura que padding no rompa el ancho */
+  transition: 0.3s ease;
+  font-size: 0.95rem;
+}
+input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 8px #6366f155;
+}
+
+button {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #6366f1;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #4f46e5;
+}
+
+button:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.success {
+  background-color: #e6ffe6;
+  border-left: 5px solid #28a745;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  color: #155724;
+  font-weight: 500;
+}

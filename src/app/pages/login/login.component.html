@@ -1,0 +1,28 @@
+<div class="login-container">
+  <h2>¡Bienvenido!</h2>
+  <p class="subtitle">Inicia sesión para continuar</p>
+
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <div class="input-group">
+      <i class="fas fa-user"></i>
+      <input id="nombre" formControlName="nombre" type="text" placeholder="Nombre de usuario" />
+    </div>
+    <div *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched" class="error">
+      El nombre es obligatorio.
+    </div>
+
+    <div class="input-group">
+      <i class="fas fa-lock"></i>
+      <input id="password" formControlName="password" type="password" placeholder="Contraseña" />
+    </div>
+    <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched" class="error">
+      La contraseña es obligatoria.
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Iniciar sesión</button>
+
+    <div *ngIf="response?.access_token" class="success">
+      ¡Login exitoso! Redirigiendo...
+    </div>
+  </form>
+</div>

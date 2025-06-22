@@ -1,0 +1,13 @@
+<h2>🛒 Lista de Productos</h2>
+
+<p *ngIf="error" class="error">{{ error }}</p>
+<p *ngIf="productos.length === 0 && !error">No hay productos disponibles.</p>
+
+<div class="productos-grid">
+  <div class="producto-card" *ngFor="let producto of productos">
+    <img [src]="producto.imagenUrl" alt="{{ producto.nombre }}" class="producto-img">
+    <h3>{{ producto.nombre }}</h3>
+    <p>{{ producto.descripcion }}</p>
+    <strong>${{ producto.precio }}</strong>
+  </div>
+</div>
